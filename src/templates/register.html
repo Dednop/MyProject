@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='auth.css') }}"
+    />
+    <title>Регистрация</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="form-box">
+        <div class="form-value">
+          <form action="/register" method="POST">
+            <h2>Регистрация</h2>
+            {% with messages = get_flashed_messages(with_categories=True) %} {%
+            if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+              <div class="error-message">{{ message }}</div>
+              {% endfor %}
+            </div>
+            {% endif %} {% endwith %}
+
+            <div class="inputbox">
+              <i class="ri-mail-line"></i>
+              <input type="email" name="email" required />
+              <label>Email</label>
+              {% if 'email_error' in messages %}
+              <div class="error-message">{{ messages['email_error'] }}</div>
+              {% endif %}
+            </div>
+            <div class="inputbox">
+              <i class="ri-lock-2-line"></i>
+              <input type="password" name="password" required />
+              <label>Пароль</label>
+              {% if 'password_error' in messages %}
+              <div class="error-message">{{ messages['password_error'] }}</div>
+              {% endif %}
+            </div>
+            <div class="inputbox">
+              <i class="ri-lock-2-line"></i>
+              <input type="password" name="confirm_password" required />
+              <label>Подтверждение пароля</label>
+              {% if 'confirm_password_error' in messages %}
+              <div class="error-message">
+                {{ messages['confirm_password_error'] }}
+              </div>
+              {% endif %}
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+            <div class="login">
+              <p>Уже есть аккаунт?</p>
+              <a href="/login">Вход</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

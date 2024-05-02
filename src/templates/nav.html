@@ -1,0 +1,33 @@
+<nav>
+  <div class="nav-logo">
+    <a href="{{ url_for('index') }}">
+      <img
+        src="{{ url_for('static', filename='images/healthlogo.png') }}"
+        alt="Логотип"
+      />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li class="link">
+      <a href="{{ url_for('index') }}">Главная</a>
+    </li>
+    <li id="link1" class="link">
+      <a href="{{ url_for('route_to_2rd') }}">Врачебные советы</a>
+    </li>
+    <li id="link2" class="link">
+      <a href="{{ url_for('route_to_3rd') }}">Статьи о заболеваниях</a>
+    </li>
+    <li id="link3" class="link">
+      <a href="{{ url_for('route_to_4rd') }}">Профилактика</a>
+    </li>
+  </ul>
+  {% if session.get('user_id') %}
+  <button class="btn" onclick="location.href='{{ url_for('logout') }}'">
+    Выход
+  </button>
+  {% else %}
+  <button class="btn" onclick="location.href='{{ url_for('login') }}'">
+    Вход
+  </button>
+  {% endif %}
+</nav>

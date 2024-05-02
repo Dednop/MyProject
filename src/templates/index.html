@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оказание платных медицинских услуг в Москве</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    {% include 'nav.html' %}
+
+    <header class="container">
+      <div class="content">
+        <h4>УЗНАЙ О СВОЕМ ЗДОРОВЬЕ БОЛЬШЕ</h4>
+        <h1>Оказание платных медицинских услуг в Москве</h1>
+        <p>
+          Сеть медицинских центров и клиник в Москве. Оказываем широкий спектр
+          услуг для взрослых и детей: консультации высококвалифицированных
+          врачей, врачебные советы, статьи о заболеваниях, профилактика.
+        </p>
+      </div>
+      <div class="image">
+        <img
+          src="{{ url_for('static', filename='images/maindoctor.png') }}"
+          alt="Описание изображения"
+        />
+      </div>
+    </header>
+
+    <section class="container">
+      <h2 class="header">Здоровье и связь</h2>
+      <div class="health">
+        <div class="card">
+          <span><i class="ri-capsule-fill"></i></span>
+          <h4>Врачебные советы</h4>
+          <p>
+            Врачебные советы, которые совершенно бесплатны и полезны для
+            здоровья.
+          </p>
+          <a href="{{ url_for('route_to_2rd') }}">
+            Читать далее <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+        <div class="card">
+          <span><i class="ri-hospital-fill"></i></span>
+          <h4>Статьи о заболеваниях</h4>
+          <p>
+            Интересуетесь какой-либо болезнью? Обязательно почитайте статьи о
+            них.
+          </p>
+          <a href="{{ url_for('route_to_3rd') }}">
+            Читать далее <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+        <div class="card">
+          <span><i class="ri-medicine-bottle-fill"></i></span>
+          <h4>Профилактика</h4>
+          <p>
+            Профилактика здоровья — это важная часть жизни каждого человека.
+          </p>
+          <a href="{{ url_for('route_to_4rd') }}">
+            Читать далее <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+        <div class="card">
+          <span><i class="ri-phone-fill"></i></span>
+          <h4>Связь</h4>
+          <p>Контактный номер для связи с нами: +79915502066</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="header">Уже с нами</h2>
+      <p class="sub-header">
+        {{ user_count }} пользователей зарегестрированы на нашем сайте!
+      </p>
+      <div class="img-min">
+        <img src="{{ url_for('static', filename='images/uraminions.jpg') }}" />
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="header">Ценовые планы</h2>
+      <p class="sub-header">
+        Наши тарифные планы включают в себя различные услуги.
+      </p>
+      <div class="pricing">
+        <div class="card">
+          <div class="content">
+            <h4>Обычный план</h4>
+            <h3>4000₽</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Прием, плановый осмотр врача общей практики
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Лабораторные исследования(сдача общего анализа крови и мочи)
+            </p>
+          </div>
+          <button class="btn">Присоединиться сейчас</button>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h4>Золотой план</h4>
+            <h3>6000₽</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Прием, плановый осмотр врача общей практики
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Лабораторные исследования(сдача общего анализа крови и мочи)
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Рентгенография органов грудной клетки
+            </p>
+          </div>
+          <button class="btn">Присоединиться сейчас</button>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h4>Алмазный план</h4>
+            <h3>12000₽</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Прием, плановый осмотр врача общей практики
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Лабораторные исследования(сдача общего анализа крови и мочи)
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Рентгенография органов грудной клетки
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Выезд на дом
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Дополнительные методы исследования
+            </p>
+          </div>
+          <button class="btn">Присоединиться сейчас</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div class="column">
+        <div class="logo">
+          <img
+            src="{{ url_for('static', filename='images/healthlogo.png') }}"
+            alt="Логотип"
+          />
+        </div>
+        <p>Оказание платных медицинских услуг в Москве.</p>
+        <div class="socials">
+          <a href="#"><i class="ri-youtube-line"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-line"></i></a>
+        </div>
+      </div>
+      <div class="column">
+        <h4>Компания</h4>
+        <a href="#">Бизнес</a>
+        <a href="#">Партнеры</a>
+        <a href="#">Сеть</a>
+      </div>
+      <div class="column">
+        <h4>О нас</h4>
+        <a href="#">Блоги</a>
+        <a href="#">Каналы</a>
+        <a href="#">Спонсоры</a>
+      </div>
+      <div class="column">
+        <h4>Контакты</h4>
+        <a href="#">Связь с нами</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Условия использования</a>
+      </div>
+    </footer>
+
+    <div class="copyright">Авторские права. Все права защищены.</div>
+  </body>
+</html>
